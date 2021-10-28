@@ -1,18 +1,17 @@
-const { INET } = require("sequelize/types");
-const { DESCRIBE } = require("sequelize/types/lib/query-types");
+const { User } = require("../../../src/app/models");
 
-// teste unitario exemplo
+describe('Authentication',  () => {
 
-DESCRIBE("Authentication", () => {
-    it("should sum two numbers", () => {
-        const x = 2;
-        const y = 4;
-        const sum = x + y;
+it('deve cadastrar um usuário', async () => {
 
+    const user = await User.create(
+        { nome : "Ricardo", 
+            email : "rodrigues@gmail.com", 
+            password_hash : "123123"});
 
+    console.log( user );
+    expect(user.email).toBe("rodrigues@gmail.com");
 
-        
-        expect(sum).toBe(6);
+});
 
-    })
-})
+});
