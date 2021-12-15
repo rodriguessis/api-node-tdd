@@ -78,6 +78,4 @@ describe('Authentication',  () => {
 
     });
 
-
-
 });
